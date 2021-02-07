@@ -1,0 +1,72 @@
+{
+  "required": ["sequence"],
+  "properties": {
+    "folder": {
+      "type": "string",
+      "description": "Folder to store screenshots in. Will be created if it does not exist."
+    },
+    "sequence": {
+      "type": "array",
+      "description": "Sequence of webpages to visit, and optionally screenshot.",
+      "items": {
+        "required": ["url"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The url to visit."
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name, which forms the base of the screenshot name."
+          },
+          "timestamp": {
+            "type": "boolean",
+            "description": "Flag indicating if the screenshot filename should include a timestamp."
+          },
+          "waitForTimeout": {
+            "type": "number",
+            "description": "Interval in ms to wait, after navigation and before screenshotting."
+          },
+          "waitForSelector": {
+            "type": "string",
+            "description": "A css selector to wait for, after navigation and before screenshotting."
+          },
+          "scrollElement": {
+            "type": "string",
+            "description": "A css selector to a given page element that we'll scroll, rather than the body."
+          },
+          "scrollElementHandle": {
+            "type": "string",
+            "description": "A css selector to a given page element that houses the scroll element (e.g. iframe)."
+          },
+          "waitForNavigation": {
+            "type": "object",
+            "description": "Waits for page navigation, after initial load and before screenshotting.",
+            "properties": {
+              "waitUntil": {
+                "type": "string",
+                "description": "See https://github.com/puppeteer/puppeteer/blob/v7.0.1/docs/api.md#pagewaitfornavigationoptions",
+                "enum": [
+                  "load",
+                  "domcontentloaded",
+                  "networkidle0",
+                  "networkidle2"
+                ]
+              },
+              "extensions": {
+                "type": "object",
+                "description": "Custom extensions for navigation waiting.",
+                "properties": {
+                  "waitForUrl": {
+                    "type": "string",
+                    "description": "Waits for navigation to this particular url."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

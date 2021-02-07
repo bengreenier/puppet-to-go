@@ -1,0 +1,22 @@
+{
+  "name": "puppet-to-go",
+  "version": "1.0.0",
+  "description": "A purpose-built browser driven by puppeteer to take screenshots of webpages in sequence.",
+  "main": "main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Greenier",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.2.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "debug": "^4.3.1",
+    "puppeteer-core": "^7.0.1",
+    "puppeteer-in-electron": "^3.0.3",
+    "yargs": "^16.2.0"
+  }
+}

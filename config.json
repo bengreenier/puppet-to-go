@@ -1,0 +1,12 @@
+{
+  "$schema": "./config.schema.json",
+  "folder": "screenshots",
+  "sequence": [
+    {
+      "displayName": "google_com",
+      "timestamp": true,
+      "url": "https://google.com",
+      "waitForTimeout": 2000
+    }
+  ]
+}
