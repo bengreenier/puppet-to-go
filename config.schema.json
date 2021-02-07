@@ -39,6 +39,10 @@
             "type": "string",
             "description": "A css selector to a given page element that houses the scroll element (e.g. iframe)."
           },
+          "scrollDelay": {
+            "type": "number",
+            "description": "Delay to wait after each scrolling operation before screenshotting. Allows time for elements to load in."
+          },
           "waitForNavigation": {
             "type": "object",
             "description": "Waits for page navigation, after initial load and before screenshotting.",

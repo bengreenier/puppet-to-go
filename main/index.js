@@ -127,6 +127,17 @@ const main = async () => {
                   [currentChunk * pageHeight]
                 );
 
+                // don't scrollDelay for the first chunk - if you want to wait before the first screenshot use waitForTimeout
+                if (currentChunk > 0) {
+                  log(
+                    `browser: scrollDelay is ${element.scrollDelay}ms, waiting`
+                  );
+
+                  await new Promise((resolve) =>
+                    setTimeout(resolve, element.scrollDelay)
+                  );
+                }
+
                 log(
                   `browser: saving screenshot to ${saveFile}_${currentChunk}.png`
                 );
